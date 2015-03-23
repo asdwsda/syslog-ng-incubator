@@ -178,6 +178,8 @@ static worker_insert_result_t
 java_worker_insert(LogThrDestDriver *s, LogMessage *msg)
 {
   JavaDestDriver *self = (JavaDestDriver *)s;
+  LogPathOptions path_options = LOG_PATH_OPTIONS_INIT;
+  log_msg_make_writable(&msg, &path_options);
   if (!java_dd_open(self))
     {
       return WORKER_INSERT_RESULT_NOT_CONNECTED;
