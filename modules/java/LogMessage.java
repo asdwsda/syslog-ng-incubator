@@ -34,6 +34,17 @@ public class LogMessage {
     return getValue(handle, name);
   }
 
+  public void setValue(String name, String value) {
+    if (name == null || name.isEmpty()) {
+      throw new IllegalArgumentException("Name cannot be empty");
+    }
+    if (value == null || value.isEmpty()) {
+      throw new IllegalArgumentException("Value cannot be empty");
+    }
+
+    setValue(handle, name, value);
+  }
+
   public void release() {
     unref(handle);
     handle = 0;
@@ -45,4 +56,5 @@ public class LogMessage {
 
   private native void unref(long handle);
   private native String getValue(long ptr, String name);
+  private native void setValue(long ptr, String name, String value);
 }
