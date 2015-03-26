@@ -1,0 +1,3 @@
+Compile scala to java class:
+
+scalac -classpath <path to SyslogNg.jar> ScalaTextDestination.scala
