@@ -38,8 +38,8 @@ public class LogMessage {
     if (name == null || name.isEmpty()) {
       throw new IllegalArgumentException("Name cannot be empty");
     }
-    if (value == null || value.isEmpty()) {
-      throw new IllegalArgumentException("Value cannot be empty");
+    if (value == null) {
+      throw new IllegalArgumentException("Value cannot be null");
     }
 
     setValue(handle, name, value);

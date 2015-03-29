@@ -83,12 +83,14 @@ Java_org_syslog_1ng_LogMessage_setValue(JNIEnv *env, jobject obj, jlong handle, 
   const char *name_str = (*env)->GetStringUTFChars(env, name, NULL);
   if (name_str == NULL)
     {
+      msg_error("Error setting name-value pair, failed to convert name", NULL);
       return;
     }
 
   const char *value_str = (*env)->GetStringUTFChars(env, value, NULL);
   if (name_str == NULL)
     {
+      msg_error("Error setting name value pair, failed to convert value", NULL);
       (*env)->ReleaseStringUTFChars(env, name, name_str);
       return;
     }
