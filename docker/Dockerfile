@@ -37,10 +37,8 @@ RUN apt-get install -y -f \
 
 RUN apt-get install -y -f \
     liblua5.2-dev \
-    python-dev \
     libperl-dev \
     librdkafka-dev \
-    libriemann-client-dev \
     libtokyocabinet-dev \
     libgrok1 \
     libgrok-dev \
